@@ -50,9 +50,7 @@ public class PracticeFormTests extends TestBase {
                     .setCity(city);
         });
 
-        step("Отравляем заполненную форму", () -> {
-            registrationPage.submitPracticeForm();
-        });
+        step("Отравляем заполненную форму", () -> registrationPage.submitPracticeForm());
 
         step("Проверка результатов заполнения", () -> {
             registrationPage.verifyResultsAppears()
@@ -84,9 +82,7 @@ public class PracticeFormTests extends TestBase {
                     .setUserNumber(mobilePhone);
         });
 
-        step("Отравляем заполненную форму", () -> {
-            registrationPage.submitPracticeForm();
-        });
+        step("Отравляем заполненную форму", () -> registrationPage.submitPracticeForm());
 
         step("Проверка результаты заполнения обязательных полей", () -> {
             registrationPage.verifyResultsAppears()
@@ -111,13 +107,9 @@ public class PracticeFormTests extends TestBase {
                     .setUserNumber("");
         });
 
-        step("Отравляем заполненную форму", () -> {
-            registrationPage.submitPracticeForm();
-        });
+        step("Отравляем заполненную форму", () -> registrationPage.submitPracticeForm());
 
-        step("Проверка что появилась ошибка", () -> {
-            registrationPage.verifyNegativeResultsAppears();
-        });
+        step("Проверка что появилась ошибка", () -> registrationPage.verifyNegativeResultsAppears());
     }
 
 }
