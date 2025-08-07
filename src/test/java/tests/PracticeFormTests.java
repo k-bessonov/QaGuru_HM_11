@@ -32,11 +32,11 @@ public class PracticeFormTests extends TestBase {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Открываем сайт с формой", () -> {
-            registrationPage.openPage();
+            registrationPage.openPage()
+                    .removeBanner();
         });
         step("Заполняем форму всеми данными", () -> {
-            registrationPage.removeBanner()
-                    .setFirstName(firstName)
+            registrationPage.setFirstName(firstName)
                     .setLastName(lastName)
                     .setEmail(userEmail)
                     .setGender(gender)
@@ -73,7 +73,8 @@ public class PracticeFormTests extends TestBase {
     void successMinFormTest() {
 
         step("Открываем сайт с формой", () -> {
-            registrationPage.openPage();
+            registrationPage.openPage()
+                    .removeBanner();
         });
 
         step("Заполняем форму обязательными полями", () -> {
@@ -99,7 +100,8 @@ public class PracticeFormTests extends TestBase {
     void negativeMinFormTest() {
 
         step("Открываем сайт с формой", () -> {
-            registrationPage.openPage();
+            registrationPage.openPage()
+                    .removeBanner();
         });
 
         step("Заполняем форму обязательными полями", () -> {
